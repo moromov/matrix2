@@ -1,0 +1,23 @@
+uses Crt;
+const n = 11;
+var a: array[1..n,1..n] of integer;
+    i,j,m: integer;
+
+Begin
+ for i:=1 to n do
+ for j:=1 to n do
+   a[i,j]:=0;
+ m:= trunc((n+1)/2);
+ for i:=1 to m do
+ for j:=i to n+1-i do
+   a[j,i]:=1;
+  
+ for i:=1 to n do
+ for j:=1 to n do
+   // if a[i,j]=1 then
+   begin
+     GoToXY(4*j,i+10);
+     writeln(a[i,j]:4)
+   end;
+ GoToXY(40,30);
+End.
